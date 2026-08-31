@@ -22,7 +22,7 @@ Some fields say "data not found". Sources lacked those numbers.
 
 Open [`analysis/companies.md`](analysis/companies.md) to read all companies
 as tables. GitHub renders it. A table of contents at the top jumps to each
-letter.
+letter. Each ticker links to a full report under `analysis/reports/`.
 
 Script `make_docs.py` builds that file from `companies.csv`. Run:
 

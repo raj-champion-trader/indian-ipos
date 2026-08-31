@@ -28,6 +28,11 @@ def cell(text):
     return (text or "").replace("|", "\\|").replace("\n", " ").strip()
 
 
+def ticker_cell(ticker):
+    report = ROOT / "analysis" / "reports" / f"{ticker}.md"
+    return f"[{ticker}](reports/{ticker}.md)" if report.exists() else ticker
+
+
 def main():
     with CSV_PATH.open(newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
@@ -54,7 +59,10 @@ def main():
         lines.append("| " + " | ".join(head for _, head in COLUMNS) + " |")
         lines.append("|" + "|".join([" --- "] * len(COLUMNS)) + "|")
         for row in groups[letter]:
-            lines.append("| " + " | ".join(cell(row[key]) for key, _ in COLUMNS) + " |")
+            values = [ticker_cell(row["Ticker"])] + [
+                cell(row[key]) for key, _ in COLUMNS[1:]
+            ]
+            lines.append("| " + " | ".join(values) + " |")
         lines.append("")
 
     OUT_PATH.write_text("\n".join(lines), encoding="utf-8")

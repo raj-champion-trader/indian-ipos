@@ -18,14 +18,17 @@ Columns:
 
 Some fields say "data not found". Sources lacked those numbers.
 
-## Batches
+## Browse
 
-`analysis/batches/` holds working files.
+Open [`analysis/companies.md`](analysis/companies.md) to read all companies
+as tables. GitHub renders it. A table of contents at the top jumps to each
+letter.
 
-- `tickers.txt` lists all 307 tickers.
-- `batch_XX` files split tickers into groups.
-- `csv_XX.csv` files hold results for each group.
-- Merge them to build `companies.csv`.
+Script `make_docs.py` builds that file from `companies.csv`. Run:
+
+    python3 make_docs.py
+
+Edit the CSV, then rebuild. Do not edit the Markdown file by hand.
 
 ## License
 

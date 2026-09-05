@@ -20,6 +20,7 @@ COLUMNS = [
     ("Expenses", "Expenses"),
     ("TAM", "TAM"),
     ("PL_Top3_Contributors", "Top 3 P&L contributors"),
+    ("Citation", "Citations"),
 ]
 
 

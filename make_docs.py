@@ -20,6 +20,10 @@ COLUMNS = [
     ("Expenses", "Expenses"),
     ("TAM", "TAM"),
     ("PL_Top3_Contributors", "Top 3 P&L contributors"),
+    ("AI_Moat", "AI & moat"),
+    ("RevGrowthCeiling", "Revenue growth ceiling"),
+    ("GrowthCatalysts", "Growth catalysts"),
+    ("StagnationCatalysts", "Stagnation catalysts"),
     ("Citation", "Citations"),
 ]
 
